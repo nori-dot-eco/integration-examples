@@ -1,0 +1,17 @@
+{
+  "extends": ["../../tsconfig", "@tsconfig/next/tsconfig"],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "./next.config.js",
+    "./.eslintrc.js"
+  ],
+  "exclude": ["node_modules"]
+}

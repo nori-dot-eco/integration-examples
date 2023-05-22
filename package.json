@@ -1,0 +1,23 @@
+{
+  "name": "integration-examples",
+  "private": true,
+  "packageManager": "yarn@3.5.1",
+  "workspaces": [
+    "examples/*"
+  ],
+  "devDependencies": {
+    "@nori-dot-com/eslint-config-nori": "^1.9.4",
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@tsconfig/next": "^1.0.5",
+    "@tsconfig/node18": "^2.0.1",
+    "@tsconfig/strictest": "^2.0.1",
+    "@types/node": "18.15",
+    "eslint": "^8.41.0",
+    "graphql": "^16.6.0",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  },
+  "resolutions": {
+    "tsconfig-paths": "^4.0.0"
+  }
+}

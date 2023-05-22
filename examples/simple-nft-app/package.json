@@ -1,0 +1,28 @@
+{
+  "name": "simple-nft-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nori-dot-com/contracts": "^1.6.4",
+    "@types/node": "20.2.1",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "ethers": "~5",
+    "next": "13.4.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.0.4",
+    "viem": "^0.3.31",
+    "wagmi": "^1.0.5"
+  },
+  "devDependencies": {
+    "@tsconfig/next": "^1.0.5",
+    "@wagmi/cli": "^1.0.1"
+  }
+}
