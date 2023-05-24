@@ -1,9 +1,14 @@
 import { defineConfig } from '@wagmi/cli';
-import { STAGING_USDC_TOKEN_ADDRESS } from '@nori-dot-com/contracts/dist/constants/addresses';
-import marketArtifact from '@nori-dot-com/contracts/dist/artifacts/contracts/Market.sol/Market.json' assert { type: 'json' };
-import certificateArtifact from '@nori-dot-com/contracts/dist/artifacts/contracts/Certificate.sol/Certificate.json' assert { type: 'json' };
-import removalArtifact from '@nori-dot-com/contracts/dist/artifacts/contracts/Removal.sol/Removal.json' assert { type: 'json' };
-import contractsConfig from '@nori-dot-com/contracts/dist/contracts.json' assert { type: 'json' };
+import { STAGING_USDC_TOKEN_ADDRESS } from '@nori-dot-com/contracts/constants/addresses';
+import marketArtifact from '@nori-dot-com/contracts/artifacts/contracts/Market.sol/Market.json' assert { type: 'json' };
+import bpNoriArtifact from '@nori-dot-com/contracts/artifacts/contracts/BridgedPolygonNORI.sol/BridgedPolygonNORI.json' assert { type: 'json' };
+import noriArtifact from '@nori-dot-com/contracts/artifacts/contracts/NORI.sol/NORI.json' assert { type: 'json' };
+import rNoriArtifact from '@nori-dot-com/contracts/artifacts/contracts/RestrictedNORI.sol/RestrictedNORI.json' assert { type: 'json' };
+import lNoriArtifact from '@nori-dot-com/contracts/artifacts/contracts/LockedNORI.sol/LockedNORI.json' assert { type: 'json' };
+import certificateArtifact from '@nori-dot-com/contracts/artifacts/contracts/Certificate.sol/Certificate.json' assert { type: 'json' };
+import removalArtifact from '@nori-dot-com/contracts/artifacts/contracts/Removal.sol/Removal.json' assert { type: 'json' };
+import nccrArtifact from '@nori-dot-com/contracts/legacy-artifacts/contracts/NCCR_V0.sol/NCCR_V0.json' assert { type: 'json' };
+import contractsConfig from '@nori-dot-com/contracts/contracts.json' assert { type: 'json' };
 import type { Address } from 'wagmi';
 
 export default defineConfig({
@@ -22,6 +27,32 @@ export default defineConfig({
       name: 'Removal',
       abi: removalArtifact.abi as any,
       address: contractsConfig.mumbai.Removal.proxyAddress as Address,
+    },
+    {
+      name: 'RestrictedNORI',
+      abi: rNoriArtifact.abi as any,
+      address: contractsConfig.mumbai.RestrictedNORI.proxyAddress as Address,
+    },
+    {
+      name: 'NORI',
+      abi: noriArtifact.abi as any,
+      address: contractsConfig.goerli.NORI.proxyAddress as Address,
+    },
+    {
+      name: 'LockedNORI',
+      abi: lNoriArtifact.abi as any,
+      address: contractsConfig.mumbai.LockedNORI.proxyAddress as Address,
+    },
+    {
+      name: 'BridgedPolygonNORI',
+      abi: bpNoriArtifact.abi as any,
+      address: contractsConfig.mumbai.BridgedPolygonNORI
+        .proxyAddress as Address,
+    },
+    {
+      name: 'NCCR',
+      abi: nccrArtifact.abi as any,
+      address: contractsConfig.mainnet.NCCR_V0.proxyAddress as Address,
     },
     {
       name: 'USDC',

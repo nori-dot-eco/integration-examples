@@ -1347,10 +1347,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nori-dot-com/contracts@npm:^1.6.4":
-  version: 1.6.4
-  resolution: "@nori-dot-com/contracts@npm:1.6.4"
-  checksum: 5ca0a49b31f4f0b5c91602ccdbc69a12009d6a2e3d30c3e8cbc7d64b624275fb36b1ffb09e2234d9ac39f9a430006ff2921d5fd10b1da0ae39fb3312d5684516
+"@nori-dot-com/contracts@npm:^1.6.5":
+  version: 1.6.5
+  resolution: "@nori-dot-com/contracts@npm:1.6.5"
+  checksum: 65493082952b3b896be3564ae5f77e470610f9c8f06d2ea47848dd445a8774986cdb907b06b86add2ba1b9ed5584c78dbb37ddd4a642cc9d99d997c8c3d036b9
   languageName: node
   linkType: hard
 
@@ -9450,7 +9450,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "simple-nft-app@workspace:examples/simple-nft-app"
   dependencies:
-    "@nori-dot-com/contracts": ^1.6.4
+    "@nori-dot-com/contracts": ^1.6.5
     "@tsconfig/next": ^1.0.5
     "@types/node": 20.2.1
     "@types/react": 18.2.6

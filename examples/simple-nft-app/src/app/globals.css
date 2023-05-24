@@ -106,20 +106,19 @@ a {
 }
 
 button {
+  background-color: white;
   padding: 1rem;
+  margin: 1rem;
   display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
-  background-color: #fff;
+  color:black;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 .25rem #999;
   font-weight: 1;
-  margin-bottom: 0.7rem;
 }
 
 button:hover {

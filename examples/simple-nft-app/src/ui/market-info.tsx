@@ -2,10 +2,10 @@
 
 import { formatUnits } from 'viem';
 
-import { useRemovalContract } from '../hooks/use-removal-contract';
+import { useRemovalContractRead } from '../hooks/use-removal-contract.js';
 
 export const MarketInfo = () => {
-  const { data } = useRemovalContract({ functionName: 'getMarketBalance' });
+  const { data } = useRemovalContractRead({ functionName: 'getMarketBalance' });
 
   return (
     <>

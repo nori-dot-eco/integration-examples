@@ -2,6 +2,7 @@
   "name": "simple-nft-app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nori-dot-com/contracts": "^1.6.4",
+    "@nori-dot-com/contracts": "^1.6.5",
     "@types/node": "20.2.1",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",

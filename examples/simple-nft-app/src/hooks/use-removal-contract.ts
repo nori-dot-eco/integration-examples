@@ -1,12 +1,10 @@
-'use client';
-
-import type { UseContractReadConfig } from 'wagmi';
+import type { UseContractReadConfig, UseContractWriteConfig } from 'wagmi';
+import { useContractWrite, useContractRead } from 'wagmi';
 import type { ReadContractResult } from 'wagmi/actions';
-import { useContractRead } from 'wagmi';
 
-import { removalABI, removalAddress } from '../config/contracts';
+import { removalABI, removalAddress } from '../config/contracts.js';
 
-export const useRemovalContract = <
+export const useRemovalContractRead = <
   TFunctionName extends string,
   TSelectData = ReadContractResult<typeof removalABI, TFunctionName>
 >(
@@ -21,5 +19,20 @@ export const useRemovalContract = <
     ...config,
   } as UseContractReadConfig<typeof removalABI, TFunctionName, TSelectData>) as ReturnType<
     typeof useContractRead<typeof removalABI, TFunctionName>
+  >;
+};
+
+export const useRemovalContractWrite = <TFunctionName extends string>(
+  config: Omit<
+    UseContractWriteConfig<typeof removalABI, TFunctionName>,
+    'abi' | 'address'
+  >
+): ReturnType<typeof useContractWrite<typeof removalABI, TFunctionName>> => {
+  return useContractWrite({
+    abi: removalABI,
+    address: removalAddress,
+    ...config,
+  } as UseContractWriteConfig<typeof removalABI, TFunctionName>) as ReturnType<
+    typeof useContractWrite<typeof removalABI, TFunctionName>
   >;
 };

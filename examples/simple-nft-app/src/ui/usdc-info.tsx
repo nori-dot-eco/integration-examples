@@ -3,7 +3,7 @@
 import { formatUnits } from 'viem';
 import { useAccount } from 'wagmi';
 
-import { useUsdcContractRead } from '../hooks/use-usdc-contract';
+import { useUsdcContractRead } from '../hooks/use-usdc-contract.js';
 
 export const UsdcInfo = () => {
   const { address } = useAccount();

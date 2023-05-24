@@ -2,15 +2,15 @@
 
 import type { Address } from 'wagmi';
 import { useAccount, useSignTypedData } from 'wagmi';
-import { splitSignature, hexlify, hexZeroPad } from 'ethers/lib/utils';
+import { splitSignature, hexlify, hexZeroPad } from 'ethers/lib/utils.js';
 import { parseUnits } from 'viem';
 
-import { marketAddress, usdcAddress } from '../config/contracts';
+import { marketAddress, usdcAddress } from '../config/contracts.js';
 import {
-  useMarketContract,
+  useMarketContractRead,
   useMarketContractWrite,
-} from '../hooks/use-market-contract';
-import { useUsdcContractRead } from '../hooks/use-usdc-contract';
+} from '../hooks/use-market-contract.js';
+import { useUsdcContractRead } from '../hooks/use-usdc-contract.js';
 
 const deadline = BigInt(1_684_721_912_285);
 
@@ -25,7 +25,7 @@ export const Purchase = () => {
   const { write } = useMarketContractWrite({
     functionName: 'swap',
   });
-  const { data: checkoutTotal } = useMarketContract({
+  const { data: checkoutTotal } = useMarketContractRead({
     functionName: 'calculateCheckoutTotal',
     args: [parseUnits('1', 18)],
   });

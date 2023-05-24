@@ -1771,10 +1771,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@nori-dot-com/contracts", [\
-        ["npm:1.6.4", {\
-          "packageLocation": "./.yarn/cache/@nori-dot-com-contracts-npm-1.6.4-68f9fbba98-5ca0a49b31.zip/node_modules/@nori-dot-com/contracts/",\
+        ["npm:1.6.5", {\
+          "packageLocation": "./.yarn/cache/@nori-dot-com-contracts-npm-1.6.5-3ceb039192-6549308295.zip/node_modules/@nori-dot-com/contracts/",\
           "packageDependencies": [\
-            ["@nori-dot-com/contracts", "npm:1.6.4"]\
+            ["@nori-dot-com/contracts", "npm:1.6.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11348,7 +11348,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./examples/simple-nft-app/",\
           "packageDependencies": [\
             ["simple-nft-app", "workspace:examples/simple-nft-app"],\
-            ["@nori-dot-com/contracts", "npm:1.6.4"],\
+            ["@nori-dot-com/contracts", "npm:1.6.5"],\
             ["@tsconfig/next", "npm:1.0.5"],\
             ["@types/node", "npm:20.2.1"],\
             ["@types/react", "npm:18.2.6"],\

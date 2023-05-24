@@ -1,17 +1,15 @@
 {
   "extends": ["../../tsconfig", "@tsconfig/next/tsconfig"],
   "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "moduleResolution": "nodenext"
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "./next.config.js",
-    "./.eslintrc.js"
+    "./next.config.cjs",
+    "./wagmi.config.ts"
   ],
   "exclude": ["node_modules"]
 }

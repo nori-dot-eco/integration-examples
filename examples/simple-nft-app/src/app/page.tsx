@@ -1,9 +1,9 @@
 /* eslint-disable dot-notation -- conflict with tsconfig */
-import { Profile } from '../ui/profile';
-import { Mint } from '../ui/mint';
-import { MarketInfo } from '../ui/market-info';
-import { UsdcInfo } from '../ui/usdc-info';
-import { Purchase } from '../ui/purchase';
+import { Profile } from '../ui/profile.js';
+import { Mint } from '../ui/mint.js';
+import { MarketInfo } from '../ui/market-info.js';
+import { UsdcInfo } from '../ui/usdc-info.js';
+import { Purchase } from '../ui/purchase.js';
 
 import styles from './page.module.css';
 

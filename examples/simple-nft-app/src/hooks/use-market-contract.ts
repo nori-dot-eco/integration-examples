@@ -2,9 +2,9 @@ import type { UseContractReadConfig, UseContractWriteConfig } from 'wagmi';
 import { useContractRead, useContractWrite } from 'wagmi';
 import type { ReadContractResult } from 'wagmi/actions';
 
-import { marketABI, marketAddress } from '../config/contracts';
+import { marketABI, marketAddress } from '../config/contracts.js';
 
-export const useMarketContract = <
+export const useMarketContractRead = <
   TFunctionName extends string,
   TSelectData = ReadContractResult<typeof marketABI, TFunctionName>
 >(
