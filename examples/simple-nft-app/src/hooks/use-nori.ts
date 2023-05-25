@@ -15,7 +15,7 @@ export const useNoriContractRead = <
 ): ReturnType<typeof useContractRead<typeof noriABI, TFunctionName>> => {
   return useContractRead({
     abi: noriABI,
-    address: noriAddress,
+    address: noriAddress[config.chainId as keyof typeof noriAddress],
     ...config,
   } as UseContractReadConfig<typeof noriABI, TFunctionName, TSelectData>) as ReturnType<
     typeof useContractRead<typeof noriABI, TFunctionName>
@@ -30,7 +30,7 @@ export const useNoriContractWrite = <TFunctionName extends string>(
 ): ReturnType<typeof useContractWrite<typeof noriABI, TFunctionName>> => {
   return useContractWrite({
     abi: noriABI,
-    address: noriAddress,
+    address: noriAddress[config.chainId as keyof typeof noriAddress],
     ...config,
   } as UseContractWriteConfig<typeof noriABI, TFunctionName>) as ReturnType<
     typeof useContractWrite<typeof noriABI, TFunctionName>

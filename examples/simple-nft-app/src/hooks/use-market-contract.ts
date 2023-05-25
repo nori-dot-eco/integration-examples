@@ -15,7 +15,7 @@ export const useMarketContractRead = <
 ): ReturnType<typeof useContractRead<typeof marketABI, TFunctionName>> => {
   return useContractRead({
     abi: marketABI,
-    address: marketAddress,
+    address: marketAddress[config.chainId as keyof typeof marketAddress],
     ...config,
   } as UseContractReadConfig<typeof marketABI, TFunctionName, TSelectData>) as ReturnType<
     typeof useContractRead<typeof marketABI, TFunctionName>
@@ -30,7 +30,7 @@ export const useMarketContractWrite = <TFunctionName extends string>(
 ): ReturnType<typeof useContractWrite<typeof marketABI, TFunctionName>> => {
   return useContractWrite({
     abi: marketABI,
-    address: marketAddress,
+    address: marketAddress[config.chainId as keyof typeof marketAddress],
     ...config,
   } as UseContractWriteConfig<typeof marketABI, TFunctionName>) as ReturnType<
     typeof useContractWrite<typeof marketABI, TFunctionName>

@@ -15,7 +15,7 @@ export const useUsdcContractRead = <
 ): ReturnType<typeof useContractRead<typeof usdcABI, TFunctionName>> => {
   return useContractRead({
     abi: usdcABI,
-    address: usdcAddress,
+    address: usdcAddress[config.chainId as keyof typeof usdcAddress],
     ...config,
   } as UseContractReadConfig<typeof usdcABI, TFunctionName, TSelectData>) as ReturnType<
     typeof useContractRead<typeof usdcABI, TFunctionName>
@@ -30,7 +30,7 @@ export const useUsdcContractWrite = <TFunctionName extends string>(
 ): ReturnType<typeof useContractWrite<typeof usdcABI, TFunctionName>> => {
   return useContractWrite({
     abi: usdcABI,
-    address: usdcAddress,
+    address: usdcAddress[config.chainId as keyof typeof usdcAddress],
     ...config,
   } as UseContractWriteConfig<typeof usdcABI, TFunctionName>) as ReturnType<
     typeof useContractWrite<typeof usdcABI, TFunctionName>

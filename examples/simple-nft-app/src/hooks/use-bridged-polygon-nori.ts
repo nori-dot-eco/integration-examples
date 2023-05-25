@@ -24,7 +24,10 @@ export const useBridgedPolygonNoriContractRead = <
 > => {
   return useContractRead({
     abi: bridgedPolygonNoriABI,
-    address: bridgedPolygonNoriAddress,
+    address:
+      bridgedPolygonNoriAddress[
+        config.chainId as keyof typeof bridgedPolygonNoriAddress
+      ],
     ...config,
   } as UseContractReadConfig<typeof bridgedPolygonNoriABI, TFunctionName, TSelectData>) as ReturnType<
     typeof useContractRead<typeof bridgedPolygonNoriABI, TFunctionName>
@@ -43,7 +46,10 @@ export const useBridgedPolygonNoriContractWrite = <
 > => {
   return useContractWrite({
     abi: bridgedPolygonNoriABI,
-    address: bridgedPolygonNoriAddress,
+    address:
+      bridgedPolygonNoriAddress[
+        config.chainId as keyof typeof bridgedPolygonNoriAddress
+      ],
     ...config,
   } as UseContractWriteConfig<typeof bridgedPolygonNoriABI, TFunctionName>) as ReturnType<
     typeof useContractWrite<typeof bridgedPolygonNoriABI, TFunctionName>

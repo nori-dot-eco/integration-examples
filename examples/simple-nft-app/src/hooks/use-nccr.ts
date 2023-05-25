@@ -15,7 +15,7 @@ export const useNccrContractRead = <
 ): ReturnType<typeof useContractRead<typeof nccrABI, TFunctionName>> => {
   return useContractRead({
     abi: nccrABI,
-    address: nccrAddress,
+    address: nccrAddress[config.chainId as keyof typeof nccrAddress],
     ...config,
   } as UseContractReadConfig<typeof nccrABI, TFunctionName, TSelectData>) as ReturnType<
     typeof useContractRead<typeof nccrABI, TFunctionName>
@@ -30,7 +30,7 @@ export const useNccrContractWrite = <TFunctionName extends string>(
 ): ReturnType<typeof useContractWrite<typeof nccrABI, TFunctionName>> => {
   return useContractWrite({
     abi: nccrABI,
-    address: nccrAddress,
+    address: nccrAddress[config.chainId as keyof typeof nccrAddress],
     ...config,
   } as UseContractWriteConfig<typeof nccrABI, TFunctionName>) as ReturnType<
     typeof useContractWrite<typeof nccrABI, TFunctionName>

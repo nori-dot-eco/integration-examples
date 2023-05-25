@@ -15,7 +15,7 @@ export const useRemovalContractRead = <
 ): ReturnType<typeof useContractRead<typeof removalABI, TFunctionName>> => {
   return useContractRead({
     abi: removalABI,
-    address: removalAddress,
+    address: removalAddress[config.chainId as keyof typeof removalAddress],
     ...config,
   } as UseContractReadConfig<typeof removalABI, TFunctionName, TSelectData>) as ReturnType<
     typeof useContractRead<typeof removalABI, TFunctionName>
@@ -30,7 +30,7 @@ export const useRemovalContractWrite = <TFunctionName extends string>(
 ): ReturnType<typeof useContractWrite<typeof removalABI, TFunctionName>> => {
   return useContractWrite({
     abi: removalABI,
-    address: removalAddress,
+    address: removalAddress[config.chainId as keyof typeof removalAddress],
     ...config,
   } as UseContractWriteConfig<typeof removalABI, TFunctionName>) as ReturnType<
     typeof useContractWrite<typeof removalABI, TFunctionName>

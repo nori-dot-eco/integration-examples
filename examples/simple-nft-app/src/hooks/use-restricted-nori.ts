@@ -20,7 +20,10 @@ export const useRestrictedNoriContractRead = <
 > => {
   return useContractRead({
     abi: restrictedNoriABI,
-    address: restrictedNoriAddress,
+    address:
+      restrictedNoriAddress[
+        config.chainId as keyof typeof restrictedNoriAddress
+      ],
     ...config,
   } as UseContractReadConfig<typeof restrictedNoriABI, TFunctionName, TSelectData>) as ReturnType<
     typeof useContractRead<typeof restrictedNoriABI, TFunctionName>
@@ -37,7 +40,10 @@ export const useRestrictedNoriContractWrite = <TFunctionName extends string>(
 > => {
   return useContractWrite({
     abi: restrictedNoriABI,
-    address: restrictedNoriAddress,
+    address:
+      restrictedNoriAddress[
+        config.chainId as keyof typeof restrictedNoriAddress
+      ],
     ...config,
   } as UseContractWriteConfig<typeof restrictedNoriABI, TFunctionName>) as ReturnType<
     typeof useContractWrite<typeof restrictedNoriABI, TFunctionName>

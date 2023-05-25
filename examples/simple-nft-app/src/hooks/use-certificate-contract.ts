@@ -15,7 +15,8 @@ export const useCertificateContractRead = <
 ): ReturnType<typeof useContractRead<typeof certificateABI, TFunctionName>> => {
   return useContractRead({
     abi: certificateABI,
-    address: certificateAddress,
+    address:
+      certificateAddress[config.chainId as keyof typeof certificateAddress],
     ...config,
   } as UseContractReadConfig<typeof certificateABI, TFunctionName, TSelectData>) as ReturnType<
     typeof useContractRead<typeof certificateABI, TFunctionName>
@@ -32,7 +33,8 @@ export const useCertificateContractWrite = <TFunctionName extends string>(
 > => {
   return useContractWrite({
     abi: certificateABI,
-    address: certificateAddress,
+    address:
+      certificateAddress[config.chainId as keyof typeof certificateAddress],
     ...config,
   } as UseContractWriteConfig<typeof certificateABI, TFunctionName>) as ReturnType<
     typeof useContractWrite<typeof certificateABI, TFunctionName>

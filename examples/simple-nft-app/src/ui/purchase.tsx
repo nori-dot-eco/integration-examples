@@ -1,7 +1,7 @@
 'use client';
 
 import type { Address } from 'wagmi';
-import { useAccount, useSignTypedData } from 'wagmi';
+import { useNetwork, useAccount, useSignTypedData } from 'wagmi';
 import { splitSignature, hexlify, hexZeroPad } from 'ethers/lib/utils.js';
 import { parseUnits } from 'viem';
 
@@ -16,18 +16,22 @@ const deadline = BigInt(1_684_721_912_285);
 
 export const Purchase = () => {
   const { address } = useAccount();
+  const { chain } = useNetwork();
   const { signTypedDataAsync } = useSignTypedData();
   const { data: nonce } = useUsdcContractRead({
     functionName: 'nonces',
     args: [address!],
+    chainId: chain?.id ?? 80_001,
   });
 
   const { write } = useMarketContractWrite({
     functionName: 'swap',
+    chainId: chain?.id ?? 80_001,
   });
   const { data: checkoutTotal } = useMarketContractRead({
     functionName: 'calculateCheckoutTotal',
     args: [parseUnits('1', 18)],
+    chainId: chain?.id ?? 80_001,
   });
 
   return (
@@ -52,7 +56,9 @@ export const Purchase = () => {
           },
           message: {
             owner: address! as Address,
-            spender: marketAddress! as Address,
+            spender: marketAddress[
+              (chain?.id as keyof typeof marketAddress) ?? 80_001
+            ]! as Address,
             value: checkoutTotal!,
             nonce: nonce!,
             deadline,
@@ -61,7 +67,9 @@ export const Purchase = () => {
           domain: {
             name: 'USD Coin (PoS)',
             version: '1',
-            verifyingContract: usdcAddress as Address,
+            verifyingContract: usdcAddress[
+              (chain?.id as keyof typeof usdcAddress) ?? 80_001
+            ] as Address,
             salt: hexZeroPad(hexlify(80_001), 32) as Address,
           },
         });
