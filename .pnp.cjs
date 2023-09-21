@@ -40,7 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/strictest", "npm:2.0.1"],\
             ["@types/node", "npm:18.15.13"],\
             ["eslint", "npm:8.41.0"],\
-            ["graphql", "npm:16.6.0"],\
+            ["graphql", "npm:16.8.1"],\
             ["prettier", "npm:2.8.8"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
           ],\
@@ -7268,10 +7268,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:16.6.0", {\
-          "packageLocation": "./.yarn/cache/graphql-npm-16.6.0-301c470966-bf1d9e3c19.zip/node_modules/graphql/",\
+        ["npm:16.8.1", {\
+          "packageLocation": "./.yarn/cache/graphql-npm-16.8.1-c2cd08b4c0-8d304b7b6f.zip/node_modules/graphql/",\
           "packageDependencies": [\
-            ["graphql", "npm:16.6.0"]\
+            ["graphql", "npm:16.8.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7685,7 +7685,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/strictest", "npm:2.0.1"],\
             ["@types/node", "npm:18.15.13"],\
             ["eslint", "npm:8.41.0"],\
-            ["graphql", "npm:16.6.0"],\
+            ["graphql", "npm:16.8.1"],\
             ["prettier", "npm:2.8.8"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
           ],\
